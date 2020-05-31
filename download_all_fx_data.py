@@ -33,8 +33,10 @@ def download_all():
                                                       pair=pair,
                                                       output_directory=output_folder,
                                                       verbose=False))
-                        could_download_full_year = True
+                        
                     except AssertionError:
+                        #### We should catch the Exception here
+                        could_download_full_year = True
                         pass  # lets download it month by month.
                     month = 1
                     while not could_download_full_year and month <= 12:
